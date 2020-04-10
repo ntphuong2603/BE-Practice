@@ -1,7 +1,7 @@
 const express = require('express');
 const GenreRouter = express.Router();
-const Genre = require('../controllers/indexCtrl');
+const GenreCtrl = require('../controllers/indexCtrl');
 
-GenreRouter.get('/list', (req, res) => Genre.getList(req, res));
+GenreRouter.get('/list', (req, res) => GenreCtrl.getList);
 
 module.exports = GenreRouter;
