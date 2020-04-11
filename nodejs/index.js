@@ -17,11 +17,9 @@ server.listen(port, ()=>{
 })
 
 const db = require('./connection/mongoAtlas');
-db.on('error', console.error.bind(console, 'MongoDB connection is error!!!'));
-db.
 
-const {BookRouter, GenreRouter} = require('./routers/indexRouter');
-//const BookRouter = require('./routers/BookRouter');
-const BookCtrl = require('./controllers/BookCtrl');
-server.use('/bookApi', (req, res) => BookCtrl.getList);
+const {BookRouter, GenreRouter, AuthorRouter, BookInstanceRouter} = require('./routers/indexRouter')
+server.use('/bookApi', BookRouter);
 server.use('/genreApi', GenreRouter);
+server.use('/authorApi', AuthorRouter);
+server.use('/bookInstanceApi', BookInstanceRouter);

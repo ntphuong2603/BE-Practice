@@ -1,11 +1,9 @@
-function Response(req, res, err, data){
+function Response(res, err, data){
+    let code = 200;
     if (err){
-        return res.code(400).json({
-            messeage: err,
-            data: data
-        })
+        code = 400;
     }
-    return res.code(200).json({
+    return res.status(code).json({
         messeage: err,
         data: data
     })

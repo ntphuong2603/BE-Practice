@@ -8,4 +8,10 @@ var AuthorSchema = new Schema({
     date_of_death: {type: Date},
 })
 
+AuthorSchema
+    .virtual('full_name')
+    .get(function(){
+        return `${this.first_name} ${this.family_name}`;
+    })
+
 module.exports = mongoose.model('Author', AuthorSchema);

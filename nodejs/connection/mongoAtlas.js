@@ -4,13 +4,13 @@ const pass = '0410@Huong';
 const databaseName = 'library';
 const connectionString = `mongodb+srv://${user}:${pass}@cluster0-axerp.mongodb.net/${databaseName}?retryWrites=true&w=majority`;
 
-mongoose.connect(connectionString, {
-    useNewUrlParser: true, 
-    useUnifiedTopology: true
-}).catch(err => console.log(err.reason));
+mongoose
+    .connect(connectionString, {useNewUrlParser: true, useUnifiedTopology: true}, function(error){
+        if (error){
+            console.log("Connection error")
+        }
+        console.log('MongoDB connection is successfully!!!')
+    })
+    .catch(error => console.log(error))
 
-const connect = mongoose.connection;
-
-//connect.on('error', console.error.bind(console, 'MongoDB connection is error!!!'));
-
-module.exports = connect;
+module.exports = mongoose.connection;
