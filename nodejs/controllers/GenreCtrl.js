@@ -1,7 +1,7 @@
 //const Response = require('./Response');
 //const Genre = require('../models/Genre');
 const BaseController = require('./BaseCtrl');
-const GenreSchema = require('../models/Genre')
+const GenreSchema = require('../schema_models/GenreSchema')
 /*
 exports.getList = async function(req, res){
     await Genre.find({},(err, data)=>{

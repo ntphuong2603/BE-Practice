@@ -1,5 +1,5 @@
 const BaseController = require('./BaseCtrl');
-const AuthorSchema = require('../models/Author')
+const AuthorSchema = require('../schema_models/AuthorSchema')
 
 class AuthorCtrl extends BaseController{
     constructor(){
