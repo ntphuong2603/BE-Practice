@@ -1,16 +1,5 @@
 const mongoose = require('mongoose');
-/*
-function Response(res, err, data){
-    let code = 200;
-    if (err){
-        code = 400;
-    }
-    return res.status(code).json({
-        messeage: err,
-        data: data
-    });
-}
-*/
+
 class BaseController {
     constructor(name, modelSchema){
         this._model = mongoose.model(name, modelSchema);

@@ -1,3 +1,4 @@
+/*
 const Response = require('./Response');
 const {BookInstance, Book, Author, Genre} = require('../models/indexModel');
 
@@ -21,3 +22,14 @@ exports.getList = async function(req, res){
         .exec((err, data)=>{ 
             Response(res, err, data)})
 }
+*/
+const BaseController = require('./BaseCtrl');
+const BookInstanceSchema = require('../schema_models/indexModel');
+
+class BookInstanceCtrl extends BaseController{
+    constructor(){
+        super('BookIntance', BookInstanceSchema);
+    }
+}
+
+module.exports = BookInstanceCtrl;

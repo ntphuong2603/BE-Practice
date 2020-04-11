@@ -1,11 +1,10 @@
-const {Book, Author, Genre} = require('../models/indexModel');
-const Response = require('./Response');
+const BaseController = require('./BaseCtrl');
+const {BookSchema} = require('../schema_models/indexModel');
 
-exports.getList = async function(req, res){
-        await Book.find({}, "title summary")
-            .populate({path: 'author', model: Author})
-            .populate('genre', Genre)
-            .exec((err, data)=>{
-                    Response(res, err, data)
-            })
+class BookCtrl extends BaseController{
+    constructor(){
+        super('Book', BookSchema);
+    }
 }
+
+module.exports = BookCtrl;
