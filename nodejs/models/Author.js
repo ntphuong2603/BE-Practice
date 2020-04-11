@@ -14,5 +14,4 @@ AuthorSchema
         return `${this.first_name} ${this.family_name}`;
     })
 
-//module.exports = mongoose.model('Author', AuthorSchema);
-module.exports = AuthorSchema;
+module.exports = mongoose.model('Author', AuthorSchema);

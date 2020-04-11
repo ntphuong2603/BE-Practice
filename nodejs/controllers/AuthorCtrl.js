@@ -1,10 +1,8 @@
-const BaseController = require('./BaseCtrl');
-const AuthorSchema = require('../models/Author')
+const Response = require('./Response');
+const Author = require('../models/Author');
 
-class AuthorCtrl extends BaseController{
-    constructor(){
-        super('Author', AuthorSchema);
-    }
+exports.getList = async function(req, res){
+    await Author.find({},(err, data)=>{
+        Response(res, err, data)
+    })
 }
-
-module.exports = AuthorCtrl;
