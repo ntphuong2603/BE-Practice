@@ -35,9 +35,21 @@ exports.read = async function(req, res){
 
 exports.update = async function(req, res){
     const id = req.params.id;
-    const movie = new Movie(req.body);
-    await Movie.findByIdAndUpdate({_id: id, movie}, (err, data)=>{
+    const movie = req.body;
+    console.log(movie);
+    let timeArray = [];
+    if (movie.time.length){
+        timeArray = movie.time.split(',');
+        //console.log(timeArray);
+    }
+    console.log(`Before: ${id}`, movie);
+    await Movie.findByIdAndUpdate({_id: id}, {
+        name: movie.name,
+        rating: movie.rating,
+        time: timeArray
+    }, (err, data)=>{
         response(res, err, data);
+        //console.log(`After: ${data}`);
     })
 }
 
@@ -45,5 +57,6 @@ exports.delete = async function(req, res){
     const id = req.params.id;
     await Movie.findByIdAndDelete({_id:id}, (err, data)=>{
         response(res, err, data);
+        console.log(data)
     })
 }
