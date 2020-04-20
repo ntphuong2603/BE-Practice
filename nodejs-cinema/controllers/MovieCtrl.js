@@ -55,7 +55,7 @@ exports.update = async function(req, res){
 
 exports.delete = async function(req, res){
     const id = req.params.id;
-    console.log(id);
+    console.log(id, req.body);
     await Movie.findByIdAndDelete({_id:id}, (err, data)=>{
         response(res, err, data);
         console.log(data)
