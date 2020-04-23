@@ -5,7 +5,7 @@ const dbName = 'cinema';
 const connectionString = `mongodb+srv://${user}:${pass}@cluster0-axerp.mongodb.net/${dbName}?retryWrites=true&w=majority`;
 
 mongoose
-    .connect(connectionString, {useNewUrlParser: true, useUnifiedTopology: true}, function(error){
+    .connect(connectionString, {useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false}, function(error){
         if (error){
             console.log("Connection error")
         }

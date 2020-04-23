@@ -33,31 +33,25 @@ exports.read = async function(req, res){
     })
 }
 
-exports.update = async function(req, res){
+exports.update = function(req, res){
     const id = req.params.id;
     const movie = req.body;
-    /*
-    let timeArray = [];
-    if (movie.time.length){
-        timeArray = movie.time.split(',');
-    }
-    */
-    console.log(`Before: ${id}`, movie);
-    await Movie.findByIdAndUpdate({_id: id}, {
+    console.log(`UPDATE: ---Before: ${id}`, movie);
+    Movie.findOneAndUpdate({_id: id}, {
         name: movie.name,
         rating: movie.rating,
         time: movie.time
     }, (err, data)=>{
         response(res, err, data);
-        console.log('After: ', data);
+        console.log('---After: ', data);
     })
 }
 
 exports.delete = async function(req, res){
     const id = req.params.id;
-    console.log(id, req.body);
-    await Movie.findByIdAndDelete({_id:id}, (err, data)=>{
+    console.log('DELETE: ---Before: ', req.body)
+    await Movie.findOneAndDelete({_id:id}, (err, data)=>{
         response(res, err, data);
-        console.log(data)
+        console.log('---After:', data)
     })
 }
