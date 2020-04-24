@@ -1,15 +1,16 @@
 {
   "name": "nodejs-cinema",
   "version": "1.0.0",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js"
+  },
   "engines": {
-    "node" : "10.15.x"
+    "node": "10.15.x",
+    "npm": "5.8.x"
   },
   "description": "",
   "main": "index.js",
-  "scripts": {
-    "start": "node index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
   "keywords": [],
   "author": "",
   "license": "ISC",
@@ -17,7 +18,7 @@
     "body-parser": "^1.19.0",
     "cors": "^2.8.5",
     "express": "^4.17.1",
-    "mongoose": "^5.9.7",
+    "mongoose": "^5.9.10",
     "nodemon": "^2.0.3"
   }
 }
