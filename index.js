@@ -8,8 +8,8 @@ app.use(bodyParser.urlencoded({extended:true}));
 app.use(bodyParser.json());
 
 const port = 5000;
-app.listen(port, ()=>{
-    console.log(`NodeJS is listenning on ${port}`);
+app.listen(port || process.env.PORT, ()=>{
+    console.log(`NodeJS is listenning on ${port || process.env.PORT}`);
 })
 
 app.get('/', (req, res)=> {
