@@ -11,13 +11,14 @@ let db = require('./connection/mongoDB');
 
 const port = process.env.PORT || 8080;
 app.listen(port, ()=>{
-    let server = app.address().port;
-    console.log(`NodeJS is listenning on ${server}`, app.settings.env);
+    console.log(`NodeJS is listenning on ${port}`, app.settings.env);
 })
 
+/*
 let MovieRouter = require('./routers/MovieRouter');
 app.use('/movie', MovieRouter);
+*/
 
 app.get('/', (req, res)=> {
-    res.status(200).json(' MongoDB - Cinema');
+    res.status(200).json('MongoDB - Cinema');
 })
