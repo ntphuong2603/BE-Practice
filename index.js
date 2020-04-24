@@ -22,3 +22,6 @@ app.use('/movie', MovieRouter);
 app.get('/', (req, res)=> {
     res.status(200).json('MongoDB - Cinema');
 })
+
+const MovieController = require('./controllers/MovieCtrl')
+app.get('/api/movies', MovieController.getList);
