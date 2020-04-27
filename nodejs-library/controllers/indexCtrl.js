@@ -1,11 +1,13 @@
 const BookCtrl = require('./BookCtrl');
-const AuthorCtrl = require('./AuthorCtrl');
 const GenreCtrl = require('./GenreCtrl');
+const AuthorCtrl = require('./AuthorCtrl');
 const BookInstanceCtrl = require('./BookInstanceCtrl');
 
-module.exports = {
+const IndexControllers = {
     BookCtrl: BookCtrl,
-    AuthorCtrl: AuthorCtrl,
     GenreCtrl: GenreCtrl,
+    AuthorCtrl: AuthorCtrl,
     BookInstanceCtrl: BookInstanceCtrl
 }
+
+module.exports = IndexControllers;

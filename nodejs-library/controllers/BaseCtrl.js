@@ -22,35 +22,36 @@ class BaseController {
 
     async getList(req, res){
         await this._model.find({}, (err, data)=>{
-            Response(res, err, data)
+            this.Response(res, err, data)
         })
     }
 
     async getOne(req, res){
         const id = req.params.id;
         await this._model.findById({_id:id}, (err, data)=>{
-            Response(res, err, data)
+            this.Response(res, err, data)
         })
     }
 
     async update(req, res){
-        const instance = new this._model(req.body);
-        await this._model.findByIdAndUpdate({_id:id, instance}, (err, data)=>{
-            Response(res, err, data)
+        const id = req.params.id;
+        const instance = req.body;
+        await this._model.findByIdAndUpdate({_id:id}, {instance}, (err, data)=>{
+            this.Response(res, err, data)
         })
     }
 
     async delete(req, res){
         const id = req.params.id;
         await this._model.findByIdAndDelete({_id: id}, (err, data)=>{
-            Response(res, err, data)
+            this.Response(res, err, data)
         })
     }
 
     async create(req, res){
         const instance = new this._model(req.body);
         await this._model.create(instance, (err, data)=>{
-            Response(res, err, data);
+            this.Response(res, err, data);
         })
     }
 

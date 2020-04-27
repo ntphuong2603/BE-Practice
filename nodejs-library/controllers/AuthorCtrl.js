@@ -1,9 +1,9 @@
 const BaseController = require('./BaseCtrl');
-const {AuthorSchema} = require('../schema_models/indexModel');
+const IndexSchema = require('../schema_models/IndexSchema');
 
 class AuthorCtrl extends BaseController{
     constructor(){
-        super('Author', AuthorSchema);
+        super('Author', IndexSchema.AuthorSchema);
     }
 }
 

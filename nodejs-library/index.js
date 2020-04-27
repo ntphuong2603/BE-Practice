@@ -18,8 +18,8 @@ server.listen(port, ()=>{
 
 const db = require('./connection/mongoAtlas');
 
-const {BookRouter, GenreRouter, AuthorRouter, BookInstanceRouter} = require('./routers/indexRouter')
-server.use('/bookApi', BookRouter);
-server.use('/genreApi', GenreRouter);
-server.use('/authorApi', AuthorRouter);
-server.use('/bookInstanceApi', BookInstanceRouter);
+const indexRouter = require('./routers/IndexRouter')
+server.use('/api/books', indexRouter.BookRouter);
+server.use('/api/genres', indexRouter.GenreRouter);
+server.use('/api/authors', indexRouter.AuthorRouter);
+server.use('/api/bookInstances', indexRouter.BookInstanceRouter);

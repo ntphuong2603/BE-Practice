@@ -1,9 +1,9 @@
 const BaseController = require('./BaseCtrl');
-const {GenreSchema} = require('../schema_models/indexModel');
+const IndexSchema = require('../schema_models/IndexSchema');
 
 class GenreCtrl extends BaseController{
     constructor(){
-        super('Genre', GenreSchema);
+        super('Genre', IndexSchema.GenreSchema);
     }
 }
 

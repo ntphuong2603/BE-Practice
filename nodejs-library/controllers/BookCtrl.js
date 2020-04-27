@@ -1,10 +1,10 @@
 const BaseController = require('./BaseCtrl');
-const {BookSchema} = require('../schema_models/indexModel');
+const IndexSchema = require('../schema_models/IndexSchema');
 
 class BookCtrl extends BaseController{
     constructor(){
-        super('Book', BookSchema);
+        super('Book', IndexSchema.BookSchema);
     }
 }
 
-module.exports = BookCtrl;
+module.exports = BookCtrl; 
