@@ -7,7 +7,7 @@ server.use(cors());
 server.use(bodyParser.urlencoded({extended: true}));
 server.use(bodyParser.json());
 
-const port = 5000;
+const port = process.env.PORT || 8080;
 server.get('/', (req, res) => {
     res.send('Hello word');
 })
@@ -18,8 +18,8 @@ server.listen(port, ()=>{
 
 const db = require('./connection/mongoAtlas');
 
-const indexRouter = require('./routers/IndexRouter')
-server.use('/api/books', indexRouter.BookRouter);
-server.use('/api/genres', indexRouter.GenreRouter);
-server.use('/api/authors', indexRouter.AuthorRouter);
-server.use('/api/bookInstances', indexRouter.BookInstanceRouter);
+const IndexRouter = require('./routers/IndexRouter')
+server.use('/api/books', IndexRouter.BookRouter);
+server.use('/api/genres', IndexRouter.GenreRouter);
+server.use('/api/authors', IndexRouter.AuthorRouter);
+server.use('/api/bookInstances', IndexRouter.BookInstanceRouter);

@@ -5,7 +5,6 @@ function response(res, err, data){
     if (err){
         code = 400;
     }
-    //console.log(code,err, data);
     res.status(code).json({
         code: code, 
         messeage: err,
