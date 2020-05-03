@@ -23,3 +23,4 @@ server.use('/api/books', IndexRouter.BookRouter);
 server.use('/api/genres', IndexRouter.GenreRouter);
 server.use('/api/authors', IndexRouter.AuthorRouter);
 server.use('/api/bookInstances', IndexRouter.BookInstanceRouter);
+server.use('/api/generalInfo', IndexRouter.GeneralRouter);

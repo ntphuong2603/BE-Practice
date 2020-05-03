@@ -1,10 +1,13 @@
 const mongoose = require('mongoose');
 
 class BaseController {
-    constructor(name, modelSchema){
-        this._model = mongoose.model(name, modelSchema);
+    constructor(name=null, modelSchema=null){
+        this._model = null;
+        if (name !== null){
+            this._model = mongoose.model(name, modelSchema);
+        }
     }
-
+    
     get model(){
         return this._model;
     }
