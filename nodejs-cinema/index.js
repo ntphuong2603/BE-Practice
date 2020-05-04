@@ -14,10 +14,10 @@ app.listen(port, ()=>{
     console.log(`NodeJS is listenning on ${port}`, app.settings.env);
 })
 
-/*
+
 let MovieRouter = require('./routers/MovieRouter');
-app.use('/movie', MovieRouter);
-*/
+app.use('/api/movies', MovieRouter);
+
 
 app.get('/', (req, res)=> {
     res.status(200).json('MongoDB - Cinema');
