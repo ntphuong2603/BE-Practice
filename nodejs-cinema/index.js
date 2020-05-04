@@ -23,9 +23,11 @@ app.get('/', (req, res)=> {
     res.status(200).json('MongoDB - Cinema');
 })
 
+/*
 const MovieController = require('./controllers/MovieCtrl')
 app.get('/api/movies', MovieController.getList);
 app.get('/api/:id', MovieController.read);
 app.put('/api', MovieController.create);
 app.post('/api/:id', MovieController.update);
 app.delete('/api/:id', MovieController.delete);
+*/
