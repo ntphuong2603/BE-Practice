@@ -1,11 +1,12 @@
 const express = require('express');
 const router = express.Router();
-const MovieCtrl = require('../controllers/MovieCtrl');
+const MovieController = require('../controllers/MovieCtrl');
 
-router.get('/all', MovieCtrl.getList);
-router.get('/:id', MovieCtrl.read);
-router.post('/create', MovieCtrl.create);
-router.put('/update/:id', MovieCtrl.update);
-router.delete('/delete/:id', MovieCtrl.delete);
+const MovieCtrl = new MovieController();
+router.get('/', (req, res)=>MovieCtrl.getList(req, res));
+router.get('/:id', (req, res)=>MovieCtrl.getOne(req, res));
+router.post('/', (req, res)=>MovieCtrl.create(req, res));
+router.put('/:id', (req, res)=>MovieCtrl.update(req, res));
+router.delete('/:id', (req, res)=>MovieCtrl.delete(req, res));
 
 module.exports = router;
